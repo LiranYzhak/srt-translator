@@ -41,4 +41,17 @@ body {
 
 button, select, input {
   font-family: inherit;
+}
+
+.mainTitle {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+/* מחיקת הסגנונות הישנים */
+.logoContainer,
+.logo {
+  /* למחוק את הסגנונות הקיימים */
 } 

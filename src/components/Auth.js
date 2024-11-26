@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { supabase } from '../config/supabase';
 import styles from './Auth.module.css';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
+import logo from '../images/SubliTranslate.png';
 
 function Auth({ onAuth }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -68,6 +69,9 @@ function Auth({ onAuth }) {
   return (
     <div className={styles.authContainer}>
       <div className={styles.authBox}>
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="SubliTranslate Logo" className={styles.logo} />
+        </div>
         <h2>
           {isForgotPassword 
             ? 'שחזור סיסמה'

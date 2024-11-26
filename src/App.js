@@ -5,6 +5,7 @@ import UserInfo from './components/UserInfo';
 import ResetPassword from './components/ResetPassword';
 import { supabase } from './config/supabase';
 import { AppProvider } from './context/AppContext';
+import logo from './images/SubliTranslate.png';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,6 +40,7 @@ function App() {
   return (
     <AppProvider>
       <div dir="rtl">
+        <h1 className="mainTitle">מתרגם הכתוביות - SubliTranslate</h1>
         {isResetPassword ? (
           <ResetPassword />
         ) : !user ? (
@@ -46,7 +48,6 @@ function App() {
         ) : (
           <>
             <UserInfo user={user} onLogout={handleLogout} />
-            <h1>מתרגם כתוביות</h1>
             <FileUploader />
           </>
         )}
