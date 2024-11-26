@@ -1,0 +1,484 @@
+.fileUploader {
+  padding: 20px;
+  text-align: center;
+  direction: rtl;
+}
+
+.select {
+  margin: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  direction: rtl;
+}
+
+.translateButton {
+  padding: 8px 16px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.translateButton:hover {
+  background-color: #0056b3;
+}
+
+.translateButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.progressContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 30px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressText {
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border-right: 4px solid var(--button-primary);
+  animation: slideIn 0.3s ease;
+  text-align: inherit;
+}
+
+[dir="ltr"] .message {
+  border-right: none;
+  border-left: 4px solid var(--button-primary);
+  text-align: left;
+}
+
+[dir="rtl"] .message {
+  border-left: none;
+  border-right: 4px solid var(--button-primary);
+  text-align: right;
+}
+
+.downloadButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.downloadButton:hover {
+  background-color: #218838;
+}
+
+.downloadButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* סגנון לאינפוט הקובץ */
+.fileUploader input[type="file"] {
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.fileUploader input[type="file"]:hover {
+  border-color: #999;
+}
+
+.fileUploader input[type="file"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* סגנון להודעות שגיאה */
+.message.error {
+  background-color: #fff3f3;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+/* סגנון להודעות הצלחה */
+.message.success {
+  background-color: #f3fff3;
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--bg-primary);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.languageToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.languageSelector {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.languageSelector option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .languageSelector option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.languageSelector option:hover {
+  background-color: var(--border-color);
+}
+
+.themeToggle {
+  background: var(--bg-secondary);
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+  background: var(--border-color);
+}
+
+.uploadSection {
+  border: 3px dashed var(--border-color);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--bg-secondary);
+}
+
+.uploadSection:hover, .dragOver {
+  border-color: var(--button-primary);
+  background: var(--bg-primary);
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadIcon {
+  font-size: 3rem;
+  color: var(--button-primary);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.translationSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+}
+
+.detectedLanguage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  padding: 8px 16px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+.targetLanguageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  gap: 16px;
+}
+
+.targetLanguageWrapper[dir="rtl"] {
+  flex-direction: row;
+}
+
+.targetLanguageWrapper[dir="ltr"] {
+  flex-direction: row;
+}
+
+.targetLanguageLabel {
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+[dir="rtl"] .targetLanguageLabel {
+  order: -1;
+}
+
+[dir="ltr"] .targetLanguageLabel {
+  order: 0;
+}
+
+.targetLanguageSelect {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* הוספת סגנונות ספציפיים למצב כהה */
+.dark .targetLanguageSelect {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* סגנונות לאפשרויות בתיבת הבחירה במצב כהה */
+.dark .targetLanguageSelect option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[dir="rtl"] .targetLanguageSelect {
+  text-align: right;
+}
+
+[dir="ltr"] .targetLanguageSelect {
+  text-align: left;
+}
+
+.translateButton {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--button-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.translateButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.translateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.progressContainer {
+  margin: 1.5rem 0;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 24px;
+  position: relative;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--button-primary), #4a9eff);
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border-right: 4px solid var(--button-primary);
+  animation: slideIn 0.3s ease;
+  text-align: inherit;
+}
+
+[dir="ltr"] .message {
+  border-right: none;
+  border-left: 4px solid var(--button-primary);
+  text-align: left;
+}
+
+[dir="rtl"] .message {
+  border-left: none;
+  border-right: 4px solid var(--button-primary);
+  text-align: right;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #28a745;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #218838;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode specific styles */
+.dark {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .uploadSection {
+    padding: 2rem 1rem;
+  }
+}
+
+.uploadContent {
+  text-align: center;
+  cursor: pointer;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.uploadContent h3 {
+  margin: 1rem 0;
+  color: var(--text-primary);
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.uploadContent p {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+}
+
+.uploadIcon {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* כשיש קובץ נבחר */
+.uploadContent.hasFile {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.uploadContent:hover {
+  transform: translateY(-2px);
+}
+
+.targetLanguageLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: right;
+} 

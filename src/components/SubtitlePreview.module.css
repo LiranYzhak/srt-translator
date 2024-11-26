@@ -1,0 +1,43 @@
+.previewContainer {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.subtitleBlocks {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.block {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.number {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.timestamp {
+  color: #0066cc;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  line-height: 1.5;
+}
+
+.more {
+  text-align: center;
+  color: #6c757d;
+  margin-top: 1rem;
+  font-style: italic;
+} 
